@@ -38,7 +38,27 @@ console.log(marcas)
 marcas.shift("Ferrari")
 console.log(marcas)
 
+//encontrar la posicion de un elemento
+let buscar_indice = marcas.indexOf("Ford")
+console.log(`
+    Posicion del elemento de Ford = ${buscar_indice}
+`)
 
+//eliminar un elemento segun la posicion
+marcas.splice(buscar_indice,1)
+console.log(marcas)
+
+//eliminar varios elementos juntos de un array
+marcas.splice(0,2)
+console.log(marcas)
+
+//copiar un array
+marcas.push("Volkswagen")
+let copia
+copia.push("Seat")
+
+console.log(copia)
+console.log(marcas)
 
 
 
