@@ -7,16 +7,16 @@ function mostrar (){
 
         document.getElementById("mostrar_p").textContent=`
 
-            La longitud de el arrelgo es: ${longitud_el},
-            El ultimo elemento de su arreglo es: ${ultimo_el},
-            Y el tercer elemento de su arreglo es: ${tercer_el}
+            La longitud de el arreglo es: ${longitud_el},
+            El ultimo elemento del arreglo es: ${ultimo_el},
+            Y el tercer elemento del arreglo es: ${tercer_el}
 
         ` 
 }
 const boton = document.getElementById("btn_calcular")
 boton.addEventListener("click", mostrar)
 
-/////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////// ////////////////////////////////
 
 function recorrer_arreglo (){
         lenguajes.forEach(Element => {
