@@ -36,7 +36,7 @@ helados.unshift("Menta granizada")
 console.log(helados)
 
 
-//como eliminar el pirmer elemento de un array
+//como eliminar el primer elemento de un array
 helados.shift()
 console.log(helados)
 
