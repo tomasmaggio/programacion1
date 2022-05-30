@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min (1).css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">NAVBAR</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Home
+                <span class="visually-hidden">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Trending</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorias</a>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Ropa de hombre</a>
+                <a class="dropdown-item" href="#">Ropa de Mujer</a>
+                <a class="dropdown-item" href="#">Joyas</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Electronica</a>
+                </div>
+            </li>
+            </ul>
+            <form class="d-flex">
+            <input class="form-control me-sm-2" type="text" placeholder="Search">
+            <button type="button" class="btn btn-outline-secondary">Search</button>
+            </form>
+        </div>
+        </div>
+    </nav>
+     <div class="container mt-4">
+         <div class="row">
+             <div class="col-md-6">
+                <h3>Calcule el área de su triangulo</h3>
+                <input id="base_triangulo" type="text" placeholder="base">
+                <input id="altura_triangulo" type="text" placeholder="altura">
+             </div>
+             <div class="col-md-6">
+                <h5 id="resultado_triangulo">Resultado: </h5>
+             </div>
+         </div>
+<hr>
+
+         <div class="row">
+            <div class="col-md-6">
+                <h3>Calcule el área de su trapecio</h3>
+                <input id="base_trapecio" type="number" placeholder="primera base"><br>
+                <input id="base2_trapecio" type="number" placeholder="segunda base"><br>
+                <input id="altura_trapecio" type="number" placeholder="atura"><br>
+             </div>
+             <div class="col-md-6">
+                <h5 id="resultado_trapecio">Resultado: </h5>
+             </div>
+         </div>
+
+<hr>
+
+         <div class="row">
+            <div class="col-md-6">
+                <h3>Calcule el área de su rectangulo</h3>
+                <input id="base_rectangulo" type="number" placeholder="base">
+                <input id="altura_rectangulo" type="number" placeholder="altura">
+             </div>
+             <div class="col-md-6">
+                <h5 id="resultado_rectangulo">Resultado: </h5>
+             </div>
+         </div>
+
+
+<hr>
+
+         <button class="btn btn-primary" id="btn_calculo">Calcular</button>
+
+     </div>
+    
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>                                                                                                    
