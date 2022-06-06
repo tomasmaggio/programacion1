@@ -1,4 +1,4 @@
-let consolas= ['PlayStation', 'Xbox', 'Nintendo Game Cube', 'Sepa Dreamcast','Gameboy Advanced', 'Pokemon Mini']
+let consolas= ['PlayStation', 'Xbox', 'Nintendo Game Cube', 'Sega Dreamcast','Gameboy Advanced', 'Pokemon Mini']
 
 //punto 2
 consolas.push("Nintendo 64")
@@ -16,9 +16,9 @@ function mostrar (){
 
     document.getElementById("mostrar_p").textContent=`
 
-            La longitud de el arreglo es: ${longitud_array},
-            El ultimo elemento del arreglo es: ${ultimo_el},
-            Y el cuarto elemento del arreglo es: ${elemento_4}
+            La longitud de el arreglo es ${longitud_array},
+            el ultimo elemento del arreglo es ${ultimo_el},
+            y el cuarto elemento del arreglo es ${elemento_4}
     
     
     `
