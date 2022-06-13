@@ -16,7 +16,9 @@ console.log(criptomonedas)
 function mostrar (){
     const longitud_array = criptomonedas.length
     const ultimo_el = criptomonedas[criptomonedas.length-1]
-    const elemento_6 = criptomonedas[6]
+
+    const indice = criptomonedas.indexOf("Helium")
+    const elemento_6 = criptomonedas[indice]
 
     document.getElementById("mostrar_p").textContent=`
 

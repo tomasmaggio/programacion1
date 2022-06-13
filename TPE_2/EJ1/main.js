@@ -5,10 +5,10 @@ const consumir_datos = async() => {
     const datos = await datos_recibidos.json()
 
     let lista_monedas = []
-    datos.forEach(monedas =>{
+    datos.forEach( (monedas,index) =>{
         let fila =`
                     <tr>
-                        <td>N°</td>
+                        <td>${index+1}</td>
                         <td>${monedas.casa.nombre}</td>
                         <td>${monedas.casa.compra}</td>
                         <td>${monedas.casa.venta}</td>
