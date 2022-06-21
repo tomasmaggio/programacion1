@@ -35,20 +35,22 @@ export default class Cliente {
     //invocamos al metodo obtener_clientes()
         this.obtener_clientes()
     }
+
     //obtener los datos del cliente
     obtener_clientes(){
 
         let lista_clientes = JSON.parse(localStorage.getItem("listado_clientes"))
 
         let filas = []
-        lista_clientes.forEach(element,index =>{
+        lista_clientes.forEach( (element,index) =>{
             let fila=` 
                     <tr>
                         <td>${element.nombre}</td>
                         <td>${element.apellido}</td>
                         <td>${element.dni}</td>
                         <td>
-                            <button onclick="this.eliminar_cliente(${index})" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                            <button onclick="almacenar_indice(${index})" data-bs-toggle="modal" data-bs-target="#mymodal" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                            <button onclick="editar(${index})" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button>
                         </td>
                     </tr>`
             filas.push(fila)
@@ -59,6 +61,7 @@ export default class Cliente {
 
 
     }
+
     //eliminar los datos del cliente
     eliminar_cliente(index){
         let lista_clientes = JSON.parse(localStorage.getItem("listado_clientes"))
@@ -70,5 +73,19 @@ export default class Cliente {
         this.obtener_clientes()
     }
 
+    //Actualizar al editar los datos del cliente
+    actualizar_cliente(index){
+        //fui a buscarel listado del cliente al storage
+        let listado_clientes = JSON.parse(localStorage.getItem("listado_clientes"))
+
+        listado_clientes[index].nombre = document.getElementById("inp_nombre").value
+        listado_clientes[index].apellido = document.getElementById("inp_apellido").value
+        listado_clientes[index].dni = document.getElementById("inp_dni").value
+
+        localStorage.setItem("listado_clientes", JSON.stringify(listado_clientes))
+
+        //volvemos a reconstruir la tabla
+        this.obtener_clientes()
+    }
 
 }
