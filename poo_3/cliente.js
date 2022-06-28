@@ -7,8 +7,11 @@ export default class Cliente {
     }
 
 
+
+
     //guardar los datos del cliente
-    guardar_cliente(){
+    guardar_cliente()
+    {
 
         let nuevo_cliente ={
             nombre: this.nombre,
@@ -32,12 +35,16 @@ export default class Cliente {
 
 
         }
-    //invocamos al metodo obtener_clientes()
+    //invocamos al metodo obtener_clientes() y vaciar_formulario()
         this.obtener_clientes()
+        this.vaciar_formulario()
     }
 
+
+
     //obtener los datos del cliente
-    obtener_clientes(){
+    obtener_clientes()
+    {
 
         let lista_clientes = JSON.parse(localStorage.getItem("listado_clientes"))
 
@@ -62,8 +69,11 @@ export default class Cliente {
 
     }
 
+
+
     //eliminar los datos del cliente
-    eliminar_cliente(index){
+    eliminar_cliente(index)
+    {
         let lista_clientes = JSON.parse(localStorage.getItem("listado_clientes"))
 
 
@@ -73,9 +83,12 @@ export default class Cliente {
         this.obtener_clientes()
     }
 
+
+
     //Actualizar al editar los datos del cliente
-    actualizar_cliente(index){
-        //fui a buscarel listado del cliente al storage
+    actualizar_cliente(index)
+    {
+        //fui a buscar el listado del cliente al storage
         let listado_clientes = JSON.parse(localStorage.getItem("listado_clientes"))
 
         listado_clientes[index].nombre = document.getElementById("inp_nombre").value
@@ -86,6 +99,16 @@ export default class Cliente {
 
         //volvemos a reconstruir la tabla
         this.obtener_clientes()
+
+        document.getElementById("btn_guardar").style.display = "block"
+        document.getElementById("btn_actualizar").style.display = "none"
     }
 
+
+
+    //vaciar el formulario (dejarlo en blanco)
+    vaciar_formulario()
+    {
+        document.getElementById("form_cliente").reset()
+    }
 }

@@ -32,9 +32,11 @@ document.getElementById("btn_eliminar").addEventListener("click",eliminar)
 
 function actualizar (){
 
-    localStorage.getItem("indice_update")
+   let index = localStorage.getItem("indice_update")
 
    let cliente = new Cliente()
    cliente.actualizar_cliente(index)
    
 }
+
+document.getElementById("btn_actualizar").addEventListener("click", actualizar)
