@@ -37,8 +37,9 @@ export default class Producto{
         lista_productos.forEach( (element, index) => {
             let fila=
             `<tr>
+                    <td>${index}</td>
                     <td>${element.producto}</td>
-                    <td>${element.imagen}</td>
+                    <td><img src="${element.imagen}"></td>
                     <td>${element.descripcion}</td>
                     <td>${element.precio}</td>
 
