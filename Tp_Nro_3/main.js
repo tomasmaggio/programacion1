@@ -12,8 +12,37 @@ function guardar(){
 
 document.getElementById("btn_guardar").addEventListener("click", guardar)
 
+//////
+
+
 function listar(){
     let productojs = new Producto()
     productojs.obtener_productos()
 }
 listar()
+
+//////
+
+
+function eliminar (){
+    let indice = localStorage.getItem("indice")
+    let producto = new Producto()
+    producto.eliminar_producto(indice)
+}
+
+document.getElementById("btn_eliminar").addEventListener("click",eliminar)
+
+//////
+
+
+function actualizar (){
+
+    let index = localStorage.getItem("indice_update")
+ 
+    let productojs = new Producto()
+    productojs.actualizar_producto(index)
+    
+ }
+ 
+ document.getElementById("btn_actualizar").addEventListener("click", actualizar)
+ 
