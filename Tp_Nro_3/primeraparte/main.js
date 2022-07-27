@@ -9,10 +9,8 @@ function guardar(){
     let productojs = new Producto(producto, precio, imagen, descripcion)
     productojs.guardar_producto()
 }
-
 document.getElementById("btn_guardar").addEventListener("click", guardar)
 
-//////
 
 
 function listar(){
@@ -21,7 +19,6 @@ function listar(){
 }
 listar()
 
-//////
 
 
 function eliminar (){
@@ -29,10 +26,8 @@ function eliminar (){
     let producto = new Producto()
     producto.eliminar_producto(indice)
 }
-
 document.getElementById("btn_eliminar").addEventListener("click",eliminar)
 
-//////
 
 
 function actualizar (){
@@ -43,6 +38,5 @@ function actualizar (){
     productojs.actualizar_producto(index)
     
  }
- 
  document.getElementById("btn_actualizar").addEventListener("click", actualizar)
  
