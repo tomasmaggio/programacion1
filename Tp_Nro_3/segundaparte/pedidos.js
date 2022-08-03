@@ -4,7 +4,7 @@ export default class Pedidos {
     constructor(prod, img, cliente){
         this.producto = prod
         this.imagen = img
-
+        this.cliente = cliente
         this.contar = 0
         this.total = 0
     }
@@ -55,27 +55,39 @@ agregar_pedido(index){
 
         localStorage.setItem("listado_pedidos", JSON.stringify (lista_pedidos))
     }
+    this.tabla_pedidos()
 }
 
 
 
 tabla_pedidos(){
-    let pedidos= JSON.parse(localStorage.getItem("listado_pedidos"))
-    let nuevo_pedido = []
-    pedidos.forEach((producto) =>{
-        let producto_pedido=`<tr>
-                                <td>${producto.nombre}</td>
-                                <td>${producto.cantidad}</td>
-                                <td>${producto.precio}</td>
-                            </tr>`
 
-    nuevo_pedido.push(producto_pedido)
-    })
-
-    document.getElementById("table_body").innerHTML = nuevo_pedido.join('')
+    if("listado_pedidos" in localStorage){
+        let pedidos= JSON.parse(localStorage.getItem("listado_pedidos"))
+        let nuevo_pedido = []
+        pedidos.forEach((element) =>{
+            let producto_pedido=`<tr>
+                                    <td>${element.producto}</td>
+                                    <td>${element.cantidad}</td>
+                                    <td>${element.precio}</td>
+                                </tr>`
+    
+        nuevo_pedido.push(producto_pedido)
+        })
+    
+        document.getElementById("table_body").innerHTML = nuevo_pedido.join('')
+    }else{
+        document.getElementById("table_body").innerHTML = null
+    }
+   
 
 }
 
+vaciar_pedido()
+{
+    localStorage.removeItem("listado_pedidos")
+    this.tabla_pedidos()
+}
 
 
 finalizar_pedido(){
@@ -86,23 +98,27 @@ finalizar_pedido(){
         this.total = this.total + parseInt(producto.precio)
 
     })
-    console.log(this.total)
+    document.getElementById("table_body").innerHTML = pedido_terminado.join('')
 
-    let nuevo_pedido = {
-        cliente: this.cliente,
+    let total_pedido = {
         total: this.total,
-        pedido: pedido_terminado
+        cliente: this.cliente,
+        fecha: Date()
     }
-    console.log(nuevo_pedido)
+    document.getElementById("table_body").innerHTML = pedido_terminado.join('')
+    console.log(total_pedido)
+
+
+
 
 
     if("pedido_final" in localStorage){
         let pedido = JSON.parse(localStorage.getItem("pedido_terminado"))
-        pedido.push(nuevo_pedido)
+        pedido.push(total_pedido)
         localStorage.setItem("pedido_terminado", JSON.stringify(pedido))
     }else{
         let pedido= []
-        pedido.push(nuevo_pedido)
+        pedido.push(total_pedido)
         localStorage.setItem("pedido_terminado", JSON.stringify(pedido))
     }
 

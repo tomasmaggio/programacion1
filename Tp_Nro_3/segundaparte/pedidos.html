@@ -66,7 +66,8 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <table class="table">
+                  <div class="row"><input id="inp_cliente" type="text" placeholder="Nombre del cliente"></div>
+                    <table class="table mt-2">
                         <thead class="table-dark">
                             <tr>
                                 <td>Encargo</td>
@@ -78,7 +79,7 @@
 
                         <tbody id="table_body">
                             <tr>
-                                <td>Total</td>
+                                <td id="total_">Total</td>
                                 <td></td>
                                 <td>$</td>
                                 <td></td>
@@ -88,19 +89,9 @@
 
                     <div class="d-grid gap-2">
                         <button id="btn_finalizar" class="btn btn-danger" type="button">Finalizar pedido</button>
-                    </div>
+                      <button id="btn_vaciar_pedido" class="btn btn-warning">Cancelar</button>
+                      </div>
                 </div>
-            </div>
-            <div class="row">
-              <div class="spinner-grow text-danger m-5" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-              <div class="spinner-grow text-danger m-5" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-              <div class="spinner-grow text-danger m-5" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
             </div>
         </div>
 
